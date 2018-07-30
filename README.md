@@ -7,10 +7,14 @@
 我的环境：
 
 ~~~
+# python
 python 3.6.4
 pymysql 0.9.1
 lxml 4.1.1
 request 2.18.4
+
+# mysql
+mysql 8.0.11
 ~~~
 
 使用
@@ -26,6 +30,10 @@ python cmd.py --type=all
 python cmd.py --type=list
 python cmd.py --tpye=info
 ~~~
+
+#### notice：
+
+项目需提前配置log目录、页面存储目录，参考`config.py` -- `spider_cfg`、`log_cfg`
 
 数据已保存至网盘：[约4.5万条数据](http://xxxx.com)
 
@@ -73,7 +81,7 @@ CREATE TABLE `subject` (
   `info_updated` tinyint(1) NOT NULL DEFAULT '0' COMMENT '详情页是否已抓取更新（-1：页面不存在，0：默认，1：已更新）',
   PRIMARY KEY (`id`),
   UNIQUE KEY `did` (`did`)
-) ENGINE=InnoDB AUTO_INCREMENT=44913 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='影视条目表';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='影视条目表';
 ~~~
 
 
