@@ -81,7 +81,7 @@ class Spider(object):
     def fetch(self, url):
         '''获取页面'''
         cookies = self.getCookie(self.origin_cookies)
-        res = requests.get(url, headers=self.headers, cookies=cookies)
+        res = requests.get(url, headers=self.headers, cookies=cookies, allow_redirects=False)
 
         return res.text
 
