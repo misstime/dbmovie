@@ -23,7 +23,6 @@ class Info(Spider):
         }
 
     def run(self):
-        self.batch_num = 2                  # 温柔抓取，守法蜘蛛！每分钟更新12条
         self.subjects = self.getAllSubject()
         start = 0
         while self.subjects[start:start+self.batch_num]:
@@ -35,7 +34,6 @@ class Info(Spider):
             self.saveData(self.batch_data)          # 数据入库更新
             self.log.info(f"id: {self.subjects[start]['id']}-{self.subjects[start + self.batch_num - 1]['id']} 更新：{len(self.batch_data)}/{self.batch_num}条")
             start += self.batch_num
-            time.sleep(10)
         self.log.info('over')
 
     def crawl(self, url, did, thread_info):
